@@ -1,0 +1,16 @@
+{% extends "header.html" %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-12">
+        <form action="" class="form-inline" method="POST" data-toggle="validator" role="form">
+            <p class="text-center"><input type="email" class="form-control" placeholder="Email" name="email" required></p>
+            <p class="text-center"><input type="password" class="form-control" placeholder="Password" name="password"
+                   value="{{ request.form.password }}" required></p>
+            <br>
+            <p class="text-center"><input class="btn" type="submit" value="Login" style="background-color: #5e749a; color: white"></p>
+        </form>
+    </div>
+</div>
+{% endblock %}
+

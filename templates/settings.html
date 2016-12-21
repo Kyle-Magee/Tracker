@@ -1,0 +1,16 @@
+{% extends "header.html" %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-12">
+        <form action="" class="form-inline" method="POST" data-toggle="validator" role="form">
+            {% for app in applications %}
+            <p class="text-center"><input type="text" class="form-control" placeholder="{{ app }} Time Cap" name="{{ app }}_limit"></p>
+            <p class="text-center"><input type="text" class="form-control" placeholder="{{ app }} ID" name="{{ app }}_id"></p>
+            {% endfor %}
+             <br>
+             <p class="text-center"><input class="btn" type="submit" value="Update Settings" style="background-color: #5e749a; color: white"></p>
+        </form>
+    </div>
+</div>
+{% endblock %}
