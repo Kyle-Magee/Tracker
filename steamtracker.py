@@ -4,8 +4,12 @@ import datetime
 
 
 def playtime(user):
-    url = 'http://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?key={}&steamid={}&format=json'.format(
-        config.steam_key, user.steam_id)
+    try:
+        url = 'http://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?key={}&steamid={}&format=json'.format(
+            config.steam_key, user.steam_id)
+    except AttributeError:
+        url = 'http://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?key={}&steamid={}&format=json'.format(
+            config.steam_key, user)
     response = requests.get(url).json()
     games = response['response']['games']
     time_played = sum([games[i]['playtime_forever'] for i in range(len(games))])

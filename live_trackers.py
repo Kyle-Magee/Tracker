@@ -1,5 +1,5 @@
 from steamtracker import run
-from app import SteamTrackers, Users
+from __init__ import SteamTrackers, Users
 import sqlalchemy
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
