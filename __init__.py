@@ -94,11 +94,11 @@ def register():
     if request.method == "POST":
         if request.form['password'] == request.form['confirm']:
             new_user = Users(email=request.form['email'], password=request.form['password'])
+            steam_id = request.form['Steam_id']
+            cur_playtime = playtime(steam_id)
             db.session.add(new_user)
             db.session.commit()
             user = Users.query.filter_by(email=request.form['email']).first()
-            steam_id = request.form['Steam_id']
-            cur_playtime = playtime(steam_id)
             new_settings = SteamTrackers(steam_id=steam_id, user_id=user.db_id,
                                          start_date=datetime.datetime.now(), time_limit=request.form['Steam_limit'],
                                          start_playtime=cur_playtime, current_playtime=cur_playtime)
