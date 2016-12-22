@@ -11,7 +11,7 @@ import datetime
 app = Flask(__name__)
 app.config['SECRET_KEY'] = config.secret_key
 BASE_DIR = os.path.abspath(os.path.dirname(__file__))
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(BASE_DIR, 'tracker.db')
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////' + os.path.join(BASE_DIR, 'tracker.db')
 
 # Database configuration
 db = SQLAlchemy(app)
