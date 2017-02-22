@@ -1,4 +1,4 @@
-import config
+import tracker.config
 import requests
 import datetime
 

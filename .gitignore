@@ -56,3 +56,21 @@ docs/_build/
 
 # PyBuilder
 target/
+
+*.iml
+
+\.idea/
+
+static/css/
+
+static/js/
+
+tracker/static/css/
+
+tracker/static/
+
+static/fonts/
+
+static/
+
+tracker/config\.py
